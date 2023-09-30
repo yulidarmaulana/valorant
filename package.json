@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@material-tailwind/html": "^2.0.0",
+    "flowbite": "^1.8.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}
