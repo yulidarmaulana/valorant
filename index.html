@@ -19,6 +19,7 @@
     <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"></script>
 
     <title>Valorant</title>
+    <link rel="icon" type="image/x-icon" href="assets/icon-valorant.png">
 </head>
 
 <body class="bg-slate-900">
@@ -28,12 +29,14 @@
 
     <div class="container-fluid mx-auto mt-auto p-6 text-center">
 
-        <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+
+        <div class="mb-4 border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-slate-900">
             <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab"
                 data-tabs-toggle="#myTabContent" role="tablist">
                 <li class="mr-2" role="presentation">
-                    <button class="inline-block p-4 border-b-2 rounded-t-lg text-lg font-medium text-gray-900 dark:text-white" id="profile-tab"
-                        data-tabs-target="#profile" type="button" role="tab" aria-controls="profile"
+                    <button
+                        class="inline-block p-4 border-b-2 rounded-t-lg text-lg font-medium text-gray-900 dark:text-white "
+                        id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile"
                         aria-selected="false">Cards</button>
                 </li>
                 <li class="mr-2" role="presentation">
@@ -56,24 +59,47 @@
                 </li>
             </ul>
         </div>
-        <div id="myTabContent">
-            <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel"
-                aria-labelledby="profile-tab">
-                <div class="grid grid-cols-6 gap-4" id="cards">
 
+        <!-- <input type="text" id="searchInput" placeholder="Cari pengguna...">
+        <ul id="agentList"></ul> -->
+
+        <form>
+            <label for="default-search"
+                class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                </div>
+                <input type="search" id="searchInput"
+                    class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Search Mockups, Logos..." required>
+                <button type="submit"
+                    class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+            </div>
+        </form>
+
+        <div id="myTabContent">
+            <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-slate-900" id="profile" role="tabpanel"
+                aria-labelledby="profile-tab">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4" id="cards">
+                    <!-- your content -->
                 </div>
             </div>
-            <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel"
+            <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-900" id="dashboard" role="tabpanel"
                 aria-labelledby="dashboard-tab">
-                <div class="grid grid-cols-6 gap-4" id="agents">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4" id="agents">
+                    <!-- your content -->
                 </div>
             </div>
             <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="tabpanel"
                 aria-labelledby="settings-tab">
-                <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
-                        class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>.
-                    Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps
-                    classes to control the content visibility and styling.</p>
+                <div class="grid grid-cols-6 gap-4" id="maps">
+
+                </div>
             </div>
             <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="contacts" role="tabpanel"
                 aria-labelledby="contacts-tab">
@@ -85,12 +111,11 @@
         </div>
 
 
-       
-       
 
     </div>
 
     <script src="js/script.js"></script>
+    <script src="js/sandbox.js"></script>
     <!-- from node_modules -->
     <script src="node_modules/@material-tailwind/html/scripts/tabs.js"></script>
 
