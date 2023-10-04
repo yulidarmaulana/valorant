@@ -57,6 +57,14 @@
                         id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts"
                         aria-selected="false">Wapons</button>
                 </li>
+
+                <li role="presentation">
+                    <button
+                        class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 text-lg font-medium text-gray-900 dark:text-white"
+                        id="bundles-tab" data-tabs-target="#bundles" type="button" role="tab" aria-controls="bundles"
+                        aria-selected="false">Bundles</button>
+                </li>
+
             </ul>
         </div>
 
@@ -70,8 +78,8 @@
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                             <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                             </svg>
                         </div>
                         <input type="search" id="searchCards"
@@ -96,8 +104,8 @@
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                             <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                             </svg>
                         </div>
                         <input type="search" id="searchInput"
@@ -110,8 +118,9 @@
                 </form>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 my-2" id="agents">
-                    <!-- your content -->
+                        <!-- content -->
                 </div>
+  
             </div>
 
             <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-900" id="settings" role="tabpanel"
@@ -123,8 +132,8 @@
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                             <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                             </svg>
                         </div>
                         <input type="search" id="searchMaps"
@@ -140,6 +149,7 @@
                     <!-- your content -->
                 </div>
             </div>
+
             <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-900" id="contacts" role="tabpanel"
                 aria-labelledby="contacts-tab">
                 <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
@@ -147,14 +157,22 @@
                     Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps
                     classes to control the content visibility and styling.</p>
             </div>
+
+            <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-900" id="bundles" role="tabpanel"
+                aria-labelledby="bundles-tab">
+                <div class="grid grid-cols-6 gap-4 my-2" id="bundles">
+                    <!-- your content -->
+
+                </div>
+            </div>
         </div>
-
-
-
     </div>
 
     <script src="js/script.js"></script>
+    <script src="js/cards.js"></script>
+    <script src="js/agents.js"></script>
     <script src="js/maps.js"></script>
+    <script src="js/bundles.js"></script>
     <script src="js/sandbox.js"></script>
     <!-- from node_modules -->
     <script src="node_modules/@material-tailwind/html/scripts/tabs.js"></script>
