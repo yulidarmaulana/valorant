@@ -24,15 +24,17 @@
 
 <body class="bg-slate-900">
     <header class="bg-slate-900 text-white p-4 text-center">
-        <h1 class="text-4xl font-bold mt-4">Valorant</h1>
-    </header>
-
-    <div class="container-fluid mx-auto mt-auto p-6 text-center">
-
-        <div class="gap-4 my-2" id="agentDetail">
-            <!-- content -->
-        </div>
-        <a href="index.html" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Back</a>
+            <h1 class="text-4xl font-bold mt-4">Valorant</h1>
+        </header>
+        
+        <div class="container-fluid mx-auto mt-auto p-6">
+            
+            <div class="gap-4 my-2" id="agentDetail">
+                <div class="grid grid-rows-6 grid-flow-col gap-4">
+                    <!-- content -->
+                </div>
+            </div>
+            <a href="../index.html" type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 my-2">Back</a>
       
     </div>
     <script>
@@ -59,9 +61,13 @@
             const displayAgentDetail = (agent) => {
                 const agentDetail = document.getElementById("agentDetail");
                 agentDetail.innerHTML = `
-                    <h2 class="text-2xl font-bold mt-4 text-white">${agent.displayName}</h2>
-                    <img class="mx-auto" src="${agent.displayIcon}" alt="${agent.displayName}">
-                    <p class="text-sm my-4 text-white-500 font-semibold dark:text-gray-400">${agent.description}</p>
+                <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <h2 class="text-2xl font-bold mt-4 text-white text-center">${agent.displayName}</h2>
+                    <div class="grid grid-cols md:grid-cols-3">
+                        <img class="mx-auto mb-4" src="${agent.fullPortrait}" alt="${agent.fullPortrait}">
+                        <p class="text-sm my-4 text-white-500 font-semibold dark:text-gray-400 col-span-2">${agent.description}</p>
+                    </div>
+                </div>
                 `;
             };
 
@@ -74,7 +80,7 @@
 
     <script src="js/script.js"></script>
     <script src="js/cards.js"></script>
-    <script src="js/agents.js"></script>
+    <script src="./js/agents.js"></script>
     <script src="js/maps.js"></script>
     <script src="js/bundles.js"></script>
     <script src="js/sandbox.js"></script>

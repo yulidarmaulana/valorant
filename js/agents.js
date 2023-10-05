@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     agentsContainer.innerHTML = "";
     agents.forEach((agent) => {
       agentsContainer.innerHTML += `
-                <a href="agent.html?id=${agent.uuid}" onclick="console.log('${agent.displayName}')" class="block max-w-sm rounded-lg shadow-md hover:bg-slate-800 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <a href="./pages/agents.html?id=${agent.uuid}" onclick="console.log('${agent.displayName}')" class="block max-w-sm rounded-lg shadow-md hover:bg-slate-800 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                   <img class="mx-auto rounded-md shadow-md" src="${agent.displayIcon}">
                   <p class="text-md my-4 text-white font-bold dark:text-gray-400">${agent.displayName}</p>
                 </a>
