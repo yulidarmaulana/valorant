@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
       card.displayName.toLowerCase().includes(searchText)
     );
     if (searchText.length === 0) {
-      // console.log(searchText, "kosong");
       displayCards(cards.slice(0, 10));
     } else {
       displayCards(filteredCards);

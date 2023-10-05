@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const searchBundles = document.getElementById("searchBundles");
+  const searchInput = document.getElementById("searchBundles");
   const bundlesContainer = document.getElementById("bundles");
 
   // Fungsi untuk memuat data agen dari API
@@ -21,16 +21,34 @@ document.addEventListener("DOMContentLoaded", () => {
     bundlesContainer.innerHTML = "";
     bundles.forEach((bundle) => {
       bundlesContainer.innerHTML += `
-        <a href="#" class="p-2 block my-2 rounded-lg shadow-md hover:bg-slate-800 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-gray-700">
-            <img class="mx-auto rounded-md" src="${bundle.displayIcon}">
-            <p class="text-sm my-4 text-white-500 font-semibold dark:text-gray-400">${bundle.displayName}</p>                        
-        </a>        
+          <a href="#" class="p-2 block my-2 rounded-lg shadow-md hover:bg-slate-800 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-gray-700">
+              <img class=" rounded-md" src="${bundle.displayIcon}">
+              <p class="text-sm my-4 text-white-500 font-semibold dark:text-gray-400">${bundle.displayName}</p>                        
+          </a>        
         `;
     });
   };
 
+  // Fungsi untuk melakukan pencarian spray
+  const searchBundles = async () => {
+    const searchText = searchInput.value.toLowerCase();
+    const bundles = await loadBundles();
+    const filteredBundles = bundles.filter((bundle) =>
+      bundle.displayName.toLowerCase().includes(searchText)
+    );
+    if (searchText.length === 0) {
+        displayBundles(bundles.slice(0, 10));
+      } else {
+        displayBundles(filteredBundles);
+      }
+  };
+
+  // Memanggil fungsi pencarian saat input berubah
+  searchInput.addEventListener("input", searchBundles);
+
   loadBundles().then((bundles) => {
     const limitBundles = bundles.slice(0, 10);
+
     displayBundles(limitBundles);
   });
 });

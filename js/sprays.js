@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     sprays.forEach((spray) => {
       spraysContainer.innerHTML += `
                 <a href="#" class="p-2 mb-4 block max-w-sm rounded-lg shadow-md hover:bg-slate-800 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-gray-700">
-                    <img class="rounded-md img-fluid" src="${spray.fullIcon}">
-                    <p class="text-sm my-4 text-white-500 font-semibold dark:text-gray-400">${spray.displayName}</p>                        
+                    <img class="rounded-md my-2 img-fluid" src="${spray.fullTransparentIcon}">
+                    <p class="text-sm text-white-500 font-semibold dark:text-gray-400">${spray.displayName}</p>                        
                 </a>
               `;
     });
@@ -37,11 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
       spray.displayName.toLowerCase().includes(searchText)
     );
     if (searchText.length === 0) {
-      // console.log(searchText, "kosong");
-      displaySprays(sprays.slice(4, 14));
-    } else {
-      displaySprays(filteredSprays);
-    }
+        displaySprays(sprays.slice(3, 15));
+      } else {
+        displaySprays(filteredSprays);
+      }
   };
 
   // Memanggil fungsi pencarian saat input berubah
@@ -49,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Memuat dan menampilkan daftar agen saat halaman dimuat
   loadSprays().then((sprays) => {
-    const limitCards = sprays.slice(4, 14);
+    const limitCards = sprays.slice(3, 15);
 
     displaySprays(limitCards);
   });
