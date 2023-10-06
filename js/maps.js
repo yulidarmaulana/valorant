@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       mapsContainer.innerHTML = "";
       maps.forEach((map) => {
         mapsContainer.innerHTML += `
-                <a href="#" class="p-2 block max-w-sm rounded-lg shadow-md hover:bg-slate-800 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-gray-700">
+                <a href="./pages/maps.html?id=${map.uuid}" class="p-2 block max-w-sm rounded-lg shadow-md hover:bg-slate-800 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-gray-700">
                     <img class="mx-auto rounded-md img-fluid" src="${map.splash}">
                     <p class="text-sm my-4 text-white-500 font-semibold dark:text-gray-400">${map.displayName}</p>                        
                 </a>
