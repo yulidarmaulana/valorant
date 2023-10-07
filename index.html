@@ -159,10 +159,29 @@
 
             <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-900" id="contacts" role="tabpanel"
                 aria-labelledby="contacts-tab">
-                <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
-                        class="font-medium text-gray-800 dark:text-white">Wapons tab's associated content</strong>.
-                    Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps
-                    classes to control the content visibility and styling.</p>
+                <form>
+                    <label for="default-search"
+                        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="search" id="searchWapons"
+                            class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Search Wapon" required>
+                        <!-- <button type="submit"
+                            class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search
+                        </button> -->
+                    </div>
+                </form>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 my-2" id="wapons">
+                    <!-- your content -->
+                </div>
             </div>
 
             <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-900" id="bundles-tab" role="tabpanel"
@@ -181,7 +200,7 @@
                         </div>
                         <input type="search" id="searchBundles"
                             class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Search Maps" required>
+                            placeholder="Search Bundle" required>
                         <!-- <button type="submit"
                             class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search
                         </button> -->
@@ -209,7 +228,7 @@
                         </div>
                         <input type="search" id="searchSprays"
                             class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Search Maps" required>
+                            placeholder="Search Spray" required>
                         <!-- <button type="submit"
                             class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search
                         </button> -->
@@ -227,6 +246,7 @@
     <script src="js/cards.js"></script>
     <script src="js/agents.js"></script>
     <script src="js/maps.js"></script>
+    <script src="js/wapons.js"></script>
     <script src="js/bundles.js"></script>
     <script src="js/sprays.js"></script>
     <!-- <script src="js/sandbox.js"></script> -->
