@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bundlesContainer.innerHTML = "";
     bundles.forEach((bundle) => {
       bundlesContainer.innerHTML += `
-          <a href="#" class="p-2 block my-2 rounded-lg shadow-md hover:bg-slate-800 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-gray-700">
+          <a href="./pages/bundles.html?id=${bundle.uuid}" class="p-2 block my-2 rounded-lg shadow-md hover:bg-slate-800 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-gray-700">
               <img class=" rounded-md" src="${bundle.displayIcon}">
               <p class="text-sm my-4 text-white-500 font-semibold dark:text-gray-400">${bundle.displayName}</p>                        
           </a>        
