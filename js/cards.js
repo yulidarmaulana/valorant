@@ -21,11 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsContainer.innerHTML = "";
     cards.forEach((card) => {
       cardsContainer.innerHTML += `
-                <a href="#" class="block max-w-sm rounded-lg shadow-md hover:bg-slate-800 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <div class="cursor-default block max-w-sm rounded-lg shadow-md hover:bg-slate-800 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                     <img class="mx-auto rounded-md p-2" src="${card.largeArt}">
                     <img class="mx-auto p-2 rounded-md shadow-md" src="${card.wideArt}">
                     <p class="text-sm my-4 text-white-500 font-semibold dark:text-gray-400">${card.displayName}</p>                        
-                </a>
+                </div>
               `;
     });
   };

@@ -24,20 +24,20 @@
 
 <body class="bg-slate-900">
     <header class="bg-slate-900 text-white p-4 text-center">
-            <h1 class="text-4xl font-bold mt-4">Valorant</h1>
-        </header>
-        
-        <div class="container-fluid mx-auto mt-auto p-6">
-        
-            <div class="gap-4 my-2" id="agentDetail">
-                <div class="grid grid-rows-6 grid-flow-col gap-4">
-                    <!-- content -->
-                </div>
+        <h1 class="text-4xl font-bold mt-4">Valorant</h1>
+    </header>
+
+    <div class="container-fluid mx-auto mt-auto p-6">
+
+        <div class="gap-4 my-2" id="agentDetail">
+            <div class="grid grid-rows-6 grid-flow-col gap-4">
+                <!-- content -->
             </div>
-            <a href="../index.html" type="button"
-                class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 my-2">Back</a>
-        
         </div>
+        <a href="../index.html" type="button"
+            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 my-2">Back</a>
+
+    </div>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             // Mengambil parameter "id" dari URL
@@ -66,7 +66,18 @@
                     <h2 class="text-2xl font-bold mt-4 text-white text-center">${agent.displayName}</h2>
                     <div class="grid grid-cols md:grid-cols-3">
                         <img class="mx-auto mb-4" src="${agent.fullPortrait}" alt="${agent.fullPortrait}">
-                        <p class="text-sm my-4 text-white-500 font-semibold dark:text-gray-400 col-span-2">${agent.description}</p>
+                        <ul role="list" class="space-y-5 my-6>
+                            <li class="flex space-x-3 items-center">
+                                <p class="text-sm text-white-500 font-semibold dark:text-gray-400 col-span-2">Name : ${agent.displayName}</p>
+                            </li>
+                            <li>
+                                <p class="text-sm text-white-500 font-semibold dark:text-gray-400 col-span-2">Description : ${agent.description}</p>
+                            </li>
+                            <li>
+                                <p class="text-sm text-white-500 font-semibold dark:text-gray-400 col-span-2">Role : ${agent.role.displayName}</p>
+                                <p class="text-sm text-white-500 font-semibold dark:text-gray-400 col-span-2">description : ${agent.role.description}</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 `;
