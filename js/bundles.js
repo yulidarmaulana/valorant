@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchBundles");
   const bundlesContainer = document.getElementById("bundles");
 
-  // Fungsi untuk memuat data agen dari API
+  // Fungsi untuk memuat data bundles dari API
   const loadBundles = async () => {
     try {
       const response = await fetch("https://valorant-api.com/v1/bundles");
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Fungsi untuk melakukan pencarian spray
+  // Fungsi untuk melakukan pencarian bundles
   const searchBundles = async () => {
     const searchText = searchInput.value.toLowerCase();
     const bundles = await loadBundles();
