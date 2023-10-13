@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (maps.length === 0) {
         // Tampilkan pesan jika data tidak ditemukan
         mapsContainer.innerHTML = `
-        <h2 class="text-lg  my-4 text-white-500 font-bold dark:text-gray-400">Data Tidak Tersedia</h2>
+        <h2 class="text-lg  my-4 text-white-500 font-bold dark:text-gray-400">not found</h2>
         `;
       } else {
       
