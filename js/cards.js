@@ -18,16 +18,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Fungsi untuk menampilkan daftar player card
   const displayCards = (cards) => {
-    cardsContainer.innerHTML = "";
-    cards.forEach((card) => {
-      cardsContainer.innerHTML += `
-                <div class="cursor-default block max-w-sm rounded-lg shadow-md hover:bg-slate-800 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                    <img class="mx-auto rounded-md p-2" src="${card.largeArt}">
-                    <img class="mx-auto p-2 rounded-md shadow-md" src="${card.wideArt}">
-                    <p class="text-sm my-4 text-white-500 font-semibold dark:text-gray-400">${card.displayName}</p>                        
-                </div>
-              `;
-    });
+    if (cards.length === 0) {
+      // Tampilkan pesan jika data tidak ditemukan
+      cardsContainer.innerHTML = `
+      <h2 class="text-lg  my-4 text-white-500 font-bold dark:text-gray-400">not found</h2>
+      `;
+    } else {
+      // Kosongkan konten cardsContainer
+      cardsContainer.innerHTML = "";
+
+      cards.forEach((card) => {
+        cardsContainer.innerHTML += `
+                  <div class="cursor-default block max-w-sm rounded-lg shadow-md hover:bg-slate-800 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                      <img class="mx-auto rounded-md p-2" src="${card.largeArt}">
+                      <img class="mx-auto p-2 rounded-md shadow-md" src="${card.wideArt}">
+                      <p class="text-sm my-4 text-white-500 font-semibold dark:text-gray-400">${card.displayName}</p>                        
+                  </div>
+                `;
+      });
+    }
   };
 
   const searchCards = async () => {
