@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       spray.displayName.toLowerCase().includes(searchText)
     );
     if (searchText.length === 0) {
-        displaySprays(sprays.slice(3, 15));
+        displaySprays(sprays.slice(3, 17));
       } else {
         displaySprays(filteredSprays);
       }
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Memuat dan menampilkan daftar agen saat halaman dimuat
   loadSprays().then((sprays) => {
-    const limitCards = sprays.slice(0, 15);
+    const limitCards = sprays.slice(0, 17);
 
     displaySprays(limitCards);
   });

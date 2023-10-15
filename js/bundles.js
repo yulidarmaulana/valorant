@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   searchInput.addEventListener("input", searchBundles);
 
   loadBundles().then((bundles) => {
-    const limitBundles = bundles.slice(0, 10);
+    const limitBundles = bundles.slice(0, 12);
 
     displayBundles(limitBundles);
   });

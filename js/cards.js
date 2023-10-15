@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.displayName.toLowerCase().includes(searchText)
     );
     if (searchText.length === 0) {
-      displayCards(cards.slice(0, 10));
+      displayCards(cards.slice(0, 12));
     } else {
       displayCards(filteredCards);
     }
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // memuat dan menampilkan daftar player card saat halaman dimuat
   loadCards().then((cards) => {
-    const limitCards = cards.slice(0, 10);
+    const limitCards = cards.slice(0, 12);
 
     displayCards(limitCards);
   });
