@@ -45,8 +45,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const filteredCards = cards.filter((card) =>
       card.displayName.toLowerCase().includes(searchText)
     );
+
+    const randomCards = [];
+
+    for (let i = 0; i < 12; i++) {
+      randomCards.push(cards[Math.round(Math.random() * cards.length)]);
+    }
+
     if (searchText.length === 0) {
-      displayCards(cards.slice(0, 12));
+      // displayCards(cards.slice(0, 12));
+      displayCards(randomCards);
     } else {
       displayCards(filteredCards);
     }
@@ -57,7 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // memuat dan menampilkan daftar player card saat halaman dimuat
   loadCards().then((cards) => {
-    const limitCards = cards.slice(0, 12);
+    const limitCards = [];
+
+    for (let i = 0; i < 12; i++) {
+      limitCards.push(cards[Math.round(Math.random() * cards.length)]);
+    }
+    // console.log(limitCards);
 
     displayCards(limitCards);
   });

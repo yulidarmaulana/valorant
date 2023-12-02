@@ -41,14 +41,23 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Fungsi untuk melakukan pencarian spray
+  
   const searchSprays = async () => {
     const searchText = searchInput.value.toLowerCase();
     const sprays = await loadSprays();
     const filteredSprays = sprays.filter((spray) =>
       spray.displayName.toLowerCase().includes(searchText)
     );
+
+    const randomSprays = [];
+    
+    for (let i = 0; i < 16; i++) {
+      randomSprays.push(sprays[Math.round(Math.random() * (sprays.length))]);
+    } 
+
     if (searchText.length === 0) {
-        displaySprays(sprays.slice(3, 17));
+        // displaySprays(sprays.slice(0, 16));
+        displaySprays(randomSprays);
       } else {
         displaySprays(filteredSprays);
       }
@@ -59,8 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Memuat dan menampilkan daftar agen saat halaman dimuat
   loadSprays().then((sprays) => {
-    const limitCards = sprays.slice(0, 17);
+    const limitSprays = [];
 
-    displaySprays(limitCards);
+    for (let i = 0; i < 16; i++) {
+      limitSprays.push(sprays[Math.round(Math.random() * (sprays.length))]);
+    } 
+
+    displaySprays(limitSprays);
   });
 });

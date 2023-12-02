@@ -44,8 +44,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const filteredBundles = bundles.filter((bundle) =>
       bundle.displayName.toLowerCase().includes(searchText)
     );
+
+    const randomBundles = [];
+
+    for (let i = 0; i < 12; i++) {
+      randomBundles.push(bundles[Math.round(Math.random() * (bundles.length))]);
+    }
+    
     if (searchText.length === 0) {
-        displayBundles(bundles.slice(0, 10));
+        // displayBundles(bundles.slice(0, 10));
+        displayBundles(randomBundles);
       } else {
         displayBundles(filteredBundles);
       }
@@ -55,7 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
   searchInput.addEventListener("input", searchBundles);
 
   loadBundles().then((bundles) => {
-    const limitBundles = bundles.slice(0, 12);
+    const limitBundles = [];
+
+    for (let i = 0; i < 12; i++) {
+      limitBundles.push(bundles[Math.round(Math.random() * (bundles.length))]);
+    }
 
     displayBundles(limitBundles);
   });
